@@ -1,0 +1,29 @@
+version: '2'
+services:
+  web:
+    build: ./Dockerfiles/web/
+    ports:
+    - "8085:80"
+    volumes:
+    - ./web:/var/www/html/
+    - ./codecoverage:/var/www/codecoverage/
+    tty: true
+    stdin_open: false
+  admin:
+    build: ./Dockerfiles/admin/
+    ports:
+    - "8086:80"
+    volumes:
+    - ./web/:/var/www/html/
+    tty: true
+    stdin_open: false
+  db:
+    build: ./Dockerfiles/db/
+    volumes:
+    - /var/lib/mysql/
+    - ./database/:/home/
+    tty: true
+    stdin_open: false
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: 172.0.0.0/255.0.0.0
