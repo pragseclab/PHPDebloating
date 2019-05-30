@@ -4,4 +4,4 @@ Source code and artifacts for "Less is More: Quantifying the Security Benefits o
 
 To get started, run docker-compose up  
 More information at: https://debloating.com  
-Link to paper: https://www.securitee.org/#publications
+Link to paper: https://www.securitee.org/files/debloating_usec2019.pdf
